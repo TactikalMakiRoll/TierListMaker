@@ -7,7 +7,7 @@
       min-h-[1rem] leading-normal max-w-[90vw]" max=35 name="Tier Title" 
       placeholder="Create your tier list" contenteditable
       @keypress="limitHeaderLength($event)" @keyup="fillEmptyHeader($event)">
-      Create your tier list</span>
+      Click to edit your tier list name</span>
     </div>
     <div class="mt-4 space-y-4">
       <div class="py-5 border-solid border-4 rounded-full border-red-700">
@@ -32,7 +32,12 @@
         <span class="px-4 border-solid border-r-pink-500 border-r-4 text-3xl text-pink-500">F</span>
       </div>
     </div>
-    <ItemForm ref="itemModal"></ItemForm>
+    <div class="my-2 flex gap-2">
+      <div class="object-cover w-14 h-14" v-for="item in unsortedItems" :key="item.name">
+        <img class="" :src="item.image" :alt="item.name">
+      </div>
+    </div>
+    <ItemForm @create-item="refreshUnsorted"></ItemForm>
   </div>
 </template>
 
@@ -41,12 +46,7 @@ import {ref} from 'vue';
 import TierComponent from './components/TierComponent.vue'
 import ItemForm from './components/ItemForm.vue';
 
-const itemModal = ref(null);
-
-function openModal(){
-  console.log("fjsdklafj");
-  itemModal.value.openModal();
-}
+const unsortedItems = ref([]);
 
 function limitHeaderLength(e){
   if(e.target.innerHTML.length >= e.target.getAttribute("max")){
@@ -55,10 +55,17 @@ function limitHeaderLength(e){
   }
 }
 function fillEmptyHeader(e){
-  if(e.target.textContent.length===0){
+  if(e.target.textContent.length === 0){
     e.target.textContent = "Input title";
   }
 }
+
+function refreshUnsorted(item){
+  console.log(item);
+  unsortedItems.value.push(item);
+  console.log(unsortedItems.value);
+}
+
 </script>
 
 
