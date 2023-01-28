@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="openForm()" class="active:scale-95 active:shadow-xl shadow-white block mx-auto bg-violet-700 rounded-full px-4 py-2 text-2xl mt-10" >Add an item</button>
+        <button @click="openForm()" class="active:scale-95 active:shadow-xl shadow-white block mx-auto bg-violet-700 rounded-full px-4 py-2 text-2xl" >Add an item</button>
         <dialog class="shadow-md backdrop-blur-lgs shadow-white border-white border-2 text-white bg-violet-800 rounded-xl backdrop:bg-[rgba(0,0,0,0.8)]" ref="modal">
             <form method="dialog" class="space-y-4">
                 <button @click="closeForm()" type="button" value="cancel" class="text-xl right-4 top-3 absolute block active:scale-95">X</button>
@@ -30,7 +30,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const emit = defineEmits(['createItem']);
+const emit = defineEmits(['create-item']);
 
 const modal = ref(null);
 const itemName = ref(null);
@@ -53,7 +53,7 @@ function createItem(){
         image: URL.createObjectURL(itemImage.value.files[0]),
     }
     console.log(item);
-    emit('createItem', item);
+    emit('create-item', item);
 }
 
 </script>
