@@ -43,6 +43,8 @@ function openForm(){
 
 function closeForm(){
     modal.value.close();
+    itemName.value.value = "";
+    itemImage.value.value = null;
     window.document.body.style.overflow = "visible";
 }
 
@@ -51,9 +53,11 @@ function createItem(){
     let item = {
         name: itemName.value.value,
         image: URL.createObjectURL(itemImage.value.files[0]),
+        tier: null,
     }
     console.log(item);
     emit('create-item', item);
+    closeForm();
 }
 
 </script>
