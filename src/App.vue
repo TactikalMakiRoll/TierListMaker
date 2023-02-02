@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white px-4 py-8">
+  <div class="text-white px-4 py-8 max-w-7xl mx-auto">
     <Transition>
     <GarbageBin @dragover.prevent 
                 @dragenter.prevent  

@@ -10,7 +10,7 @@
                 </div>
                 <div class="grid gap-y-1">
                     <label class="pointer-events-none" for="picture">Choose a profile picture:</label>
-                    <input type="file" ref="itemImage"
+                    <input required type="file" ref="itemImage"
                         id="picture" name="picture"
                         class="px-2 py-2 bg-gray-900 
                         rounded-xl file:mx-4 
