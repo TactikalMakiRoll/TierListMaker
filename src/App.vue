@@ -43,7 +43,6 @@
     </div>
     <ItemForm @create-item="refreshUnsorted"></ItemForm>
 
-    <button @click="screenshotResult" class="mt-5 active:scale-95 active:shadow-xl shadow-white block mx-auto bg-violet-700 rounded-full px-4 py-2 text-2xl">Finish and get the screenshot</button>
   </div>
 </template>
 
@@ -101,13 +100,11 @@ function dropDragItem(event, tier){
   item.tier = tier;
 }
 
-
 function removeItem(event){
   tierItems.value = tierItems.value.filter((elem) => elem.name !== event.dataTransfer.getData('itemName'));
 }
 
 onMounted(() => {
-
   document.addEventListener('dragstart',(event)=>{
     console.log("dragstart");
     if(event.target.getAttribute('draggable')){
@@ -119,7 +116,6 @@ onMounted(() => {
     console.log("dragend");
     binVisible.value = false;
   })
-  
   document.addEventListener('drop',(event)=>{
     console.log("dragend");
     binVisible.value = false;
