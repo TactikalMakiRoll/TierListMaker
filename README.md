@@ -1,7 +1,17 @@
-# Vue 3 + Vite
+# Drag'N'Drop Tier list maker
+A short project made with Vite/Vue3/Tailwind to practice creating Drag'n'Drop applications.
+![showcase](https://user-images.githubusercontent.com/51524264/216659990-887ccd29-b17b-455c-8097-03a7351f955d.gif)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+**Link to project:** https://mellow-halva-226ba4.netlify.app/
 
-## Recommended IDE Setup
+## How It's Made:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+**Tech used:** HTML, CSS, JavaScript, Vue 3 (Composition API), Tailwind, Vite
+
+## Optimizations
+
+Would be great to implement defence against creating items with same name/image (quick and easy fix) and a dragover effect on every tier + sorting inside tiers to make the last added image be last in the list and possibility to change positions inside tiers, but I decided that I could create a Trello copy when I account for those right away. This was just a quick project for learning
+
+## Lessons Learned:
+
+Pointer and Mouse events can be changed to drag events and draggable attributes where most of the work is already done. Learned transferring images between components.
